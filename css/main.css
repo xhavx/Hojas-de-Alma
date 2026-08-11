@@ -1,0 +1,13 @@
+@import url("./base/elements.css");
+@import url("./base/resets");
+
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+
+@import url("./layout/footer.css");
+@import url("./layout/header.css");
+@import url("./layout/main.css");
+
+@import url("./pages/inicio.css");
+
+@import url("./settings/varibles.css");

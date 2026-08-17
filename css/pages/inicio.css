@@ -3,8 +3,23 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     padding: 5%;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.50) ;
+    outline: 1px solid #888;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.997);
+    box-shadow: 0 0 0 3px rgba(223, 222, 222, 0.7);
+    margin: 16px;
 }
 
 .contenido{
     color: aliceblue;
+    margin: 80px;
+    padding: 2px;
+    
+}
+.img_cat1{
+    height: 100%;
+    width: 100%;
 }

@@ -1,6 +1,14 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
 .menu{
     background-color: #000000;
     padding: 10px;
+    top: 0;
+    z-index: 1000;
 }
 
 .menu ul {
@@ -24,8 +32,8 @@
 }
 
 .menu a:hover {
-    background-color: #555;
-    color: #d4af37;
+    background-color:azure;
+    color:coral;
     border-radius: 5px;
 }
 

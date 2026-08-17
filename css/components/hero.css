@@ -8,6 +8,13 @@
   overflow: hidden;
   background: rgb(0 0 0 / 0.4);
   text-align: center;
+
+  background: rgba(0, 0, 0, 0.50) ;
+  outline: 1px solid #888;
+  padding: 10px;
+   border: 1px solid rgba(255, 255, 255, 0.997);
+  box-shadow: 0 0 0 3px rgba(223, 222, 222, 0.7);
+  margin: 16px;
 }
 
 .fondo_hero{

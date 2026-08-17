@@ -1,0 +1,35 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(0 0 0 / 0.4);
+  text-align: center;
+}
+
+.fondo_hero{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: -1;
+}
+
+.contenido_hero {
+    max-width: 700px;
+    padding: 2rem;
+    color: aliceblue;
+
+}
+.contenido_hero h1{
+    font-size: 180px;
+    margin: 1px;
+}
+
+
+

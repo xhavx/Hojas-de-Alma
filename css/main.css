@@ -1,5 +1,6 @@
-@import url("./base/elements.css");
 @import url("./base/resets");
+@import url("./settings/varibles.css");
+@import url("./base/elements.css");
 
 @import url("./components/buttons.css");
 @import url("./components/cards.css");

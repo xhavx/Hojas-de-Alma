@@ -1,0 +1,67 @@
+/* ==========================================================================
+   RESET GENERAL Y BOX MODEL
+   ========================================================================== */
+
+/* Aplica box-sizing: border-box a todo. Esto hace que el padding y los bordes 
+   no sumen tamaño extra al ancho (width) que le des a tus cajas. */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Evita que los navegadores móviles alteren el tamaño del texto al rotar la pantalla */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth; /* Hace que los enlaces internos bajen con un deslizamiento suave */
+}
+
+/* Asegura que el body use toda la altura disponible y limpie desbordamientos raros */
+body {
+  min-height: 100vh;
+  line-height: 1.5; /* Interlineado base cómodo para la lectura */
+  -webkit-font-smoothing: antialiased; /* Suaviza las fuentes en pantallas Mac/iOS */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   ELEMENTOS MULTIMEDIA (Imágenes, Videos, etc.)
+   ========================================================================== */
+
+/* Evita que las imágenes se desborden de sus contenedores padres */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA Y FORMULARIOS
+   ========================================================================== */
+
+/* Elimina las tipografías raras que los navegadores le imponen a los botones e inputs */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Evita que los títulos hereden tamaños gigantescos por defecto de forma descontrolada */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word; /* Evita que palabras larguísimas rompan el diseño */
+}
+
+/* ==========================================================================
+   ELEMENTOS ESPECÍFICOS DE ESTRUCTURA
+   ========================================================================== */
+
+/* Quita las viñetas (puntitos) de las listas para que no tengas que poner 'list-style: none' en cada menú */
+ul, ol {
+  list-style: none;
+}
+
+/* Limpia el estilo por defecto de los enlaces (quita el subrayado azul clásico) */
+a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto del contenedor donde esté metido */
+}

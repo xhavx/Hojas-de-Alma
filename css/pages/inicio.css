@@ -19,7 +19,44 @@
     padding: 2px;
     
 }
+.contenido h3{
+    text-align: center;
+}
 .img_cat1{
     height: 100%;
     width: 100%;
+}
+
+.filo_mango{
+display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 5%;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.50) ;
+    outline: 1px solid #888;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.997);
+    box-shadow: 0 0 0 3px rgba(223, 222, 222, 0.7);
+    margin: 16px;
+
+}
+.img_galeria{
+    display:flex;
+    flex-direction: row;
+    gap:30px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.img_cat2{
+    width: 240px;
+    height: auto;
+    object-fit: contain;
+}
+
+.mat_contenido{
+    flex: 1;
+    max-width: 650px;
 }

@@ -1,0 +1,34 @@
+/* ==========================================================================
+   VARIABLES GLOBALES (CSS Custom Properties)
+   ========================================================================== */
+
+:root {
+  /* --- PALETA DE COLORES --- */
+  /* Fondos oscuros (Tema fragua/carbón) */
+  --bg-primary: #0a0a0a;       /* El negro puro de tu footer */
+  --bg-secondary: #121212;     /* Fondo general de la página */
+  --bg-card: rgba(0, 0, 0, 0.9); /* El fondo de tus cajas de contacto/redes */
+  
+  /* Tonos de acento (Fuego/Acero) */
+  --color-accent: #ff6600;     /* Naranja fuego para detalles */
+  --color-accent-light: #ffaa00; /* Dorado para enlaces e interactivos */
+  --color-border: #333333;     /* Gris oscuro para bordes sutiles */
+  
+  /* Textos */
+  --text-main: #f5f5f5;        /* Blanco roto para lecturas cómodas */
+  --text-muted: #b0b0b0;       /* Gris para textos secundarios */
+  --text-light: #ffffff;       /* Blanco puro para títulos de alto impacto */
+
+  /* --- TIPOGRAFÍAS --- */
+  --font-titles: 'Georgia', serif; /* Elegante y rústica para cuchillería */
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Limpia para lectura */
+
+  /* --- ESPACIADOS Y RADIOS --- */
+  --radius-normal: 8px;        /* El redondeado de tus cajas del footer */
+  --radius-sharp: 4px;         /* Para botones o detalles más filosos */
+  --transition-fast: 0.3s ease; /* Para efectos hover suaves */
+  
+  /* --- SOMBRAS (Filtros protectores de contraste) --- */
+  --shadow-text: 0px 4px 12px rgba(0, 0, 0, 0.9); /* La que usamos en el Hero */
+  --shadow-card: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}

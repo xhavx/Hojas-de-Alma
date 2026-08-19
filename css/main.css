@@ -13,3 +13,5 @@
 @import url("./pages/inicio.css");
 
 @import url("./settings/varibles.css");
+
+@import url("./responsive/mobile.css") screen and (max-width:768px);

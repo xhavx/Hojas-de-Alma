@@ -1,0 +1,275 @@
+/* ==========================================================================
+   Estilos Responsive para el Header
+   ========================================================================== */
+
+/* 1. Ajustamos la lista para que se ordene en columna */
+.menu ul {
+  display: flex;
+  flex-direction: column; /* Apila los enlaces uno abajo del otro */
+  align-items: center;    /* Centra los enlaces horizontalmente */
+  gap: 15px;              /* Deja una separación cómoda entre cada botón */
+  padding: 20px 0;        /* Le da aire arriba y abajo a la lista */
+  margin: 0;
+  list-style: none;       /* Por si acaso, asegura quitar los puntitos */
+}
+
+/* 2. Hacemos que los enlaces sean más fáciles de tocar en pantallas táctiles */
+.menu a {
+  display: inline-block;
+  padding: 10px 20px;     /* Aumenta el área de clic (ley de Fitts) */
+  font-size: 1.2rem;      /* Agranda un poco el texto para lectura móvil */
+  width: 100%;            /* Opcional: hace que todo el ancho sea cliqueable */
+  text-align: center;
+}
+
+/* ==========================================================================
+   Estilos Responsive para el Hero
+   ========================================================================== */
+
+/* 1. Contenedor principal del Hero */
+.hero {
+  position: relative;
+  display: flex !important;   /* Forzamos el comportamiento flex */
+  flex-direction: column !important;   
+  align-items: center !important;      
+  justify-content: center !important;
+  text-align: center !important;       
+  padding: 60px 20px !important; /* Aumentamos el espacio interno arriba y abajo */
+  
+  /* RESPALDO DE ALTURA FUERTE */
+  height: auto !important;
+  min-height: 80vh !important;  /* Usamos vh tradicional con !important */
+  min-height: 80svh !important; /* Si el celular lo soporta, usará este */
+  
+  overflow: hidden;
+}
+
+/* 2. La imagen de fondo adaptable */
+.fondo_hero {
+  position: absolute;       /* Se mantiene por detrás del contenido */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* Clave: hace que la imagen cubra todo el espacio sin deformarse */
+  z-index: 1;               /* Asegura que quede atrás */
+  opacity: 0.3;             /* Opcional: la hace más sutil para que se lea bien el texto */
+}
+
+/* 3. El contenedor del texto */
+.contenido_hero {
+  position: relative;
+  z-index: 2;               /* Se posiciona por encima de la imagen */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;                /* Separa el h1 del párrafo */
+}
+
+/* 4. Ajuste de textos para pantallas chicas */
+.contenido_hero h1 {
+  font-size: 2.2rem;        /* Achica el título principal */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.contenido_hero p {
+  font-size: 1.1rem;        /* Ajusta el tamaño del párrafo */
+  margin: 0;
+  line-height: 1.5;         /* Mejora la legibilidad en celulares */
+}
+
+/* ==========================================================================
+   Estilos Responsive para Categorías
+   ========================================================================== */
+
+/* 1. Contenedor general de todas las categorías */
+.Categorias {
+  display: flex;
+  flex-direction: column;   /* Alinea los artículos uno abajo del otro */
+  gap: 40px;                /* Separa cada bloque de categoría bastante espacio */
+  padding: 40px 20px;       /* Margen interno para que no toque los bordes del celular */
+}
+
+/* 2. Cada artículo individual (Tarjeta de categoría) */
+/* ==========================================================================
+   Corrección Responsive para las Tarjetas de Categoría (.item_resumen)
+   ========================================================================== */
+.item_resumen {
+  /* 1. Cambiamos el Grid de escritorio a una sola columna */
+  display: flex !important;
+  flex-direction: column !important; 
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem !important; /* Separación cómoda entre el texto y la imagen */
+
+  /* 2. Ajustamos los espacios para que respire en pantallas chicas */
+  margin: 10px 0 !important;   /* Bajamos el margen exterior para aprovechar espacio */
+  padding: 20px !important;    /* Le damos un colchón de aire real por dentro del cuadro */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* 3. Limpiamos y suavizamos el cuadro de escritorio */
+  background: rgba(0, 0, 0, 0.65) !important; /* Un poco más oscuro para que resalte el texto */
+  outline: none !important;                    /* Eliminamos la línea exterior (outline) */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Hacemos el borde blanco mucho más sutil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;  /* Cambiamos el triple borde por una sombra suave */
+}
+
+
+/* 3. El contenedor del texto interior */
+.item_resumen .contenido {
+  width: 100%;
+}
+
+.item_resumen h3 {
+  font-size: 1.6rem;        /* Tamaño cómodo para el título de la categoría */
+  margin-bottom: 10px;
+}
+
+.item_resumen p {
+  font-size: 1rem;
+  line-height: 1.6;         /* Le da aire al párrafo para leer fácil en celular */
+  margin: 0;
+}
+
+/* 4. Las imágenes de las categorías */
+.img_cat1 {
+  width: 100% !important;    /* Ocupa todo el ancho disponible del celular */
+  max-width: 320px;          /* Evita que la imagen se agrande de más y pierda calidad */
+  height: auto !important;   /* Mantiene la proporción original de la foto */
+  border-radius: 8px;        /* Opcional: suaviza las esquinas de las fotos de los cuchillos */
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Estilos Responsive para Materiales
+   ========================================================================== */
+
+/* 1. Contenedor general */
+.materiales {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+/* 2. Cada bloque (hojas y mangos) */
+.filo_mango {
+  /* 1. Pasamos a una sola columna vertical */
+  display: flex !important;
+  flex-direction: column !important; 
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem !important;
+
+  /* 2. Ajustamos los espacios para que el contenido respire */
+  margin: 10px 0 !important;   
+  padding: 20px !important;    /* Espacio interno para que el texto no pegue al borde */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* 3. Replicamos el suavizado del cuadro para mantener la armonía visual */
+  background: rgba(0, 0, 0, 0.65) !important; 
+  outline: none !important;                    
+  border: 1px solid rgba(255, 255, 255, 0.2) !important; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;  
+}
+
+/* 3. El contenedor de las imágenes pequeñas (La Galería) */
+.img_galeria {
+  display: flex;
+  flex-wrap: wrap;        /* Clave: si no entran en una fila, bajan automáticamente */
+  justify-content: center;/* Centra las imágenes */
+  gap: 15px;              /* Espacio entre las fotitos */
+  width: 100%;
+}
+
+/* 4. Las imágenes individuales de la galería */
+.img_cat2 {
+  width: calc(50% - 10px); /* Hace que entren exactamente 2 imágenes por fila */
+  min-width: 130px;        /* Evita que se hagan diminutas en pantallas muy chicas */
+  max-width: 180px;        /* Evita que se estiren demasiado */
+  height: auto !important;/* Les da un alto uniforme para que se vea prolijo */
+  object-fit: cover;       /* Recorta la imagen para que llene el recuadro sin deformarse */
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   Estilos Responsive para el Footer
+   ========================================================================== */
+
+/* 1. Contenedor de las secciones del footer */
+.foo_contenedor {
+  display: flex !important;
+  flex-direction: column !important; /* Apila todo de arriba a abajo */
+  align-items: center;               /* Centra los bloques horizontalmente */
+  text-align: center;                /* Centra los textos interiores */
+  gap: 30px;                         /* Separa el contacto de las redes */
+  padding: 30px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. Bloque de contacto */
+.foo_contacto h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.foo_contacto p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 3. El Banner decorativo: lo ocultamos en celulares para optimizar espacio */
+.bann_foo {
+  display: none !important; 
+}
+
+/* 4. Sección de Redes Sociales */
+.foo_redes h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.foo_redes ul {
+  display: flex;
+  flex-wrap: wrap;          /* Permite que los iconos bajen si la pantalla es muy chica */
+  justify-content: center;  /* Centra la fila de iconos */
+  gap: 20px;                /* Buena separación para no errarle con el dedo */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* 5. Los enlaces e iconos de las redes */
+.foo_redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;              /* Tamaño recomendado por Google para elementos táctiles */
+  height: 44px;
+}
+
+.foo_redes img {
+  width: 32px !important;    /* Controla el tamaño de los logos (Instagram, WhatsApp, etc) */
+  height: 32px !important;
+  object-fit: contain;
+}
+
+/* 6. Bloque de derechos de autor (abajo de todo) */
+.foo_derechos {
+  text-align: center;
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+}
+
+.foo_derechos p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.7;             /* Lo hace un poquito más discreto */
+}
+
+

@@ -1,17 +1,20 @@
+/* 1. Configuración y Resets (Primero lo básico) */
+@import url("./settings/variables.css");
 @import url("./base/resets.css");
-@import url("./settings/varibles.css");
 @import url("./base/elements.css");
 
+/* 2. Estructura General / Layout (El contenedor antes de los objetos) */
+@import url("./layout/header.css");
+@import url("./layout/main.css");
+@import url("./layout/footer.css");
+
+/* 3. Componentes Específicos (Los objetos dentro del contenedor) */
 @import url("./components/buttons.css");
 @import url("./components/cards.css");
 @import url("./components/hero.css");
 
-@import url("./layout/footer.css");
-@import url("./layout/header.css");
-@import url("./layout/main.css");
-
+/* 4. Páginas concretas */
 @import url("./pages/inicio.css");
 
-@import url("./settings/varibles.css");
-
-@import url("./responsive/mobile.css") screen and (max-width:768px);
+/* 5. Adaptabilidad (Siempre al final de todo) */
+@import url("./responsive/mobile.css") screen and (max-width: 768px);

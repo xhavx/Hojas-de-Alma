@@ -25,11 +25,12 @@
 
 
 .foo_contacto{
-    width: 180px;
+    width: 220px;
     padding: 20px 25px;
     border-radius: 8px;
     text-align: left;
     flex-shrink: 0;
+    box-sizing: border-box;
 
 }
 .bann_foo{
@@ -40,6 +41,7 @@
 }
 .bann_foo img{
     width: 100%;
+    max-width: 600px;
     height: auto;
 
     object-fit: contain;
@@ -50,10 +52,12 @@
 .foo_contacto h2{
     margin-top: 0;
     margin-bottom: 10px;
+    white-space: nowrap;
 }
 .foo_contacto p{
     margin: 0;
     line-height: 1.5;
+    white-space: normal;
 }
 
 .foo_redes{

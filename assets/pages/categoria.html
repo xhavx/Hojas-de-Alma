@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Cambiá el título según la página actual -->
-    <title>Materiales - Hojas del Alma</title> 
+    <title>Materiales HdA</title> 
     
     <!-- 2. TU ARCHIVO CENTRAL: Carga el escritorio y el celular al final automáticamente -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
@@ -17,13 +17,13 @@
     <header> 
         <nav class="menu">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="categorias.html">Categorías</a></li>
-                <li><a href="materiales.html">Materiales</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="/assets/pages/categoria.html">Categorías</a></li>
+                <li><a href="/assets/pages/materiales.html">Materiales</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-    </header>
+    </header> 
 
     <!-- 4. CONTENIDO ÚNICO: Lo único que cambia en cada página nueva -->
     <main>
@@ -34,14 +34,53 @@
     </main>
 
     <!-- 5. REUTILIZÁ EL FOOTER: Copiá exactamente el mismo bloque de tu index.html -->
-    <footer class="footer">
-        <div class="foo_contenedor">
-            <!-- Tus bloques de contacto y redes -->
-        </div>
-        <div class="foo_derechos">
-            <p>© 2026 Hojas del Alma.</p>
-        </div>
-    </footer>
+    <footer class="footer" id="contacto">
+            <div class="foo_contenedor">
+                <div class="foo_contacto">
+                    <h2>Contacto</h2>
+                    <p> Para contacto  usar cualquiera de las redes sociales.</p>
+                </div>
+                <div class="bann_foo">
+                    <img  src="/assets/images/bann_foo.png" alt="Banner_footer">
+                </div>
+                
+                <div class="foo_redes">
+                        <h3>Siguenos en....</h3>
+                        <ul>
+                            <li>
+                                <a href="#" aria-label="youtube">
+                                    <img src="/assets/icons/youtube.png" alt="youtube">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Instagram">
+                                    <img src="/assets/icons/instagram.png" alt="Instagram">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="WhatsApp">
+                                    <img src="/assets/icons/whatsapp.png" alt="WhatsApp">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="facebook">
+                                    <img src="/assets/icons/facebook.png" alt="facebook">
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="#" aria-label="Gmail">
+                                    <img src="/assets/icons/gmail.png" alt="Gmail">
+                                </a>
+                            </li>  
+                        </ul>
+                </div>
+
+            </div>
+            <div class="foo_derechos">
+                <p>© 2026 Hojas del Alma.</p>
+            </div>
+
+        </footer> 
 
 </body>
 </html>

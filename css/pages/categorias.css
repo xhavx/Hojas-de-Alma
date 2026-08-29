@@ -1,0 +1,158 @@
+.categoria-catalogo{
+    padding: 40px 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    font-family: 'helvetica Neue',arial,sans-serif;
+}
+
+.categoria-catalogo h2, .personalizados h2, .restaurados h2, .moldes h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 12px;
+}
+
+.grid_galerias{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 30px;
+}
+
+.grid_galerias .tarjeta-producto{
+    display: flex;
+    flex-direction: column;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.tarjeta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    transform-style: preserve-3d;
+}
+
+.tarjeta-producto:hover .tarjeta-inner{
+    box-shadow: 0 15px 35px rgba(223, 177, 25, 0.15);
+}
+
+.tarjeta-inner.rotada{
+    transform: rotateY(180deg);
+}
+
+.tarjeta-front, .tarjeta-back{
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    border:1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: rgba(20, 20, 20, 0.75) !important;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease;
+}
+
+.tarjeta-front {
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-back {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.tarjeta-producto:hover .tarjeta-front, .tarjeta-producto:hover .tarjeta-back{
+    border-color: #dfb119 !important;
+}
+
+.contenido-back{
+    padding: 25px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.contenido-back h4{
+    font-size: 18px;
+    color:#dfb119;
+    margin: 0 0 12px 0;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+}
+
+.descripcion-prod{
+    font-size: 13px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-family: 'helvetica Neue', arial, sans-serif;
+}
+
+.precio-prod{
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-volver{
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.grid_galerias .img-contenido{
+    background: transparent !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    overflow: hidden;
+    order: 2;
+}
+
+.img-contenido img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: drop-shadow( 0px 5px 10px rgba(0,0,0,0.5)); 
+}
+
+.nombre-prod{
+    padding: 20px 15px 0 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    order: 1;
+}
+
+.nombre-prod h3{
+    font-size: 16px;
+    font-weight: 600;
+    color:#ffffff;
+    margin: 0;
+}

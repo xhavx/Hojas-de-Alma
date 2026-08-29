@@ -272,4 +272,11 @@
   opacity: 0.7;             /* Lo hace un poquito más discreto */
 }
 
+@media (max-width: 768px) {
+  .grid_galerias {
+    /* Rompe las 4 columnas de escritorio y fuerza 1 sola columna vertical en celular */
+    grid-template-columns: 1fr !important; 
+    gap: 30px !important;
+  }
+}
 

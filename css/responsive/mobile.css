@@ -1,8 +1,68 @@
 /* ==========================================================================
-   Estilos Responsive para el Header
+   Estilos Responsive para el Header (Menú Desplegable)
    ========================================================================== */
 
-/* 1. Ajustamos la lista para que se ordene en columna */
+/* 1. Creamos el botón de 3 líneas (blancas para tu fondo negro) */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  position: absolute; /* Se posiciona flotando en el header */
+  top: 15px;
+  right: 20px;       /* Lo ubica a la derecha */
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transition: 0.3s;
+}
+
+/* 2. Capa oscura de fondo para cerrar al tocar fuera */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease;
+  z-index: 98;
+}
+
+.menu-overlay.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 3. TU MENÚ: Lo transformamos en un panel lateral oculto */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;           /* Oculto fuera de la pantalla a la derecha */
+  width: 260px;           /* Ancho del panel del menú */
+  height: 100vh;
+  background-color: #000000; /* Mantiene tu fondo negro */
+  padding-top: 80px;      /* Espacio para que el botón no tape el primer enlace */
+  transition: 0.4s ease;
+  z-index: 99;
+}
+
+/* Clase que activará JavaScript para deslizar el menú hacia adentro */
+.menu.activo {
+  right: 0;
+}
+
+/* 4. TUS ESTILOS ACTUALES (Integrados perfectamente) */
 .menu ul {
   display: flex;
   flex-direction: column; /* Apila los enlaces uno abajo del otro */
@@ -13,13 +73,24 @@
   list-style: none;       /* Por si acaso, asegura quitar los puntitos */
 }
 
-/* 2. Hacemos que los enlaces sean más fáciles de tocar en pantallas táctiles */
 .menu a {
   display: inline-block;
   padding: 10px 20px;     /* Aumenta el área de clic (ley de Fitts) */
   font-size: 1.2rem;      /* Agranda un poco el texto para lectura móvil */
   width: 100%;            /* Opcional: hace que todo el ancho sea cliqueable */
   text-align: center;
+  color: white;           /* Asegura que mantenga el color del texto */
+  text-decoration: none;
+}
+
+.menu-toggle.activo span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.activo span:nth-child(2) {
+    opacity: 0; /* Desaparece la línea del medio */
+}
+.menu-toggle.activo span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* ==========================================================================

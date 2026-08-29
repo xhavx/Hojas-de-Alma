@@ -37,3 +37,10 @@ header {
     border-radius: 5px;
 }
 
+/* --- SOLO PARA ESCRITORIO --- */
+
+/* Ocultamos por completo el botón y la capa oscura en pantallas grandes */
+.menu-toggle, 
+.menu-overlay {
+    display: none;
+}

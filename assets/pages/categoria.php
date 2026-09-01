@@ -1,3 +1,17 @@
+<?php
+// Esto va en la línea 1 del archivo, antes de cualquier etiqueta HTML
+include '../conexion.php';
+
+$consulta = $conexion->query("SELECT nombre, precio FROM producto");
+$precios = [];
+
+if ($consulta) {
+    while ($fila = $consulta->fetch_assoc()) {
+        // Guardamos el precio indexado por el nombre del producto
+        $precios[$fila['nombre']] = $fila['precio'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,7 +31,7 @@
     <header> 
         <nav class="menu">
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="../../index.html">Inicio</a></li>
                 <li><a href="./categoria.html">Categorías</a></li>
                 <li><a href="./materiales.html">Materiales</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -34,9 +48,9 @@
                 <p>Creamos hojas y utensilios de cocina. También nos encargamos de mantener y cuidar sus filos.</p>
             </div>
         </section>
-        <section class="categoria-catalogo" aria-labelledby="titulo-moldes">
+        <section id="id_moldes" class="categoria-catalogo" aria-labelledby="titulo-moldes">
             <h2 id="titulo-moldes">Moldes</h2>
-                <div class="grid_galerias">
+                <div id="id_moldes" class="grid_galerias">
                 <article class="tarjeta-producto">
                     <div class="tarjeta-inner">
                         <div class="tarjeta-front">
@@ -51,7 +65,9 @@
                             <div class="contenido-back">
                                 <h4>Gyuto occidental</h4>
                                 <p class="descripcion-prod">Es la versión japonesa del cuchillo de chef occidental, diseñado como una herramienta multiusos para cortar carne, pescado y verduras.</p>
-                                <div class="precio-prod">$85000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Gyuto occidental'] ?? 0, 0, ',', '.'); ?>
+                                </div>  
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -71,7 +87,9 @@
                             <div class="contenido-back">
                                 <h4>Santoku Alveolado</h4>
                                 <p class="descripcion-prod">Es una herramienta de origen japonés cuyo nombre significa "tres virtudes", diseñado para cortar con total versatilidad carne, pescado y verduras.</p>
-                                <div class="precio-prod">$88000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Santoku Alveolado'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -91,7 +109,9 @@
                             <div class="contenido-back">
                                 <h4>Mondador</h4>
                                 <p class="descripcion-prod">Utensilio de cocina pequeño, ligero y de hoja corta, ideal para tareas que exigen precisión y control por encima de la fuerza.</p>
-                                <div class="precio-prod">$45000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Mondador'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -111,7 +131,9 @@
                             <div class="contenido-back">
                                 <h4>Deshuesador Curvo</h4>
                                 <p class="descripcion-prod">Es un cuchillo de cocina especializado con una hoja estrecha, puntiaguda y arqueada, diseñada para separar la carne del hueso con máxima precisión y suavidad.</p>
-                                <div class="precio-prod">$55000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Deshuesador Curvo'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -131,7 +153,9 @@
                             <div class="contenido-back">
                                 <h4>Cuchillo de Pan</h4>
                                 <p class="descripcion-prod">Es una herramienta de cocina con hoja larga y filo dentado diseñada para cortar cortezas duras sin aplastar la miga interior.</p>
-                                <div class="precio-prod">$60000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Cuchillo de Pan'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -151,7 +175,9 @@
                             <div class="contenido-back">
                                 <h4>Cuchillo de Caza Bushcraft</h4>
                                 <p class="descripcion-prod">Es una herramienta de hoja fija robusta y versátil, diseñada para realizar trabajos de madera, preparar leña, cazar y sobrevivir en la naturaleza.</p>
-                                <div class="precio-prod">$90000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Cuchillo de Caza Bushcraft'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -171,7 +197,9 @@
                             <div class="contenido-back">
                                 <h4>Cuchillo Táctico de Supervivencia</h4>
                                 <p class="descripcion-prod">Es una herramienta de hoja fija robusta y versátil diseñada para enfrentar situaciones extremas, tareas de campamento y defensa en la naturaleza.</p>
-                                <div class="precio-prod">$80000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Cuchillo Táctico de Supervivencia'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -191,7 +219,9 @@
                             <div class="contenido-back">
                                 <h4>Bowie de Caza</h4>
                                 <p class="descripcion-prod">Es una herramienta robusta de hoja fija, grande y ancha, diseñada originalmente en el siglo XIX para la supervivencia, la defensa y las actividades al aire libre.</p>
-                                <div class="precio-prod">$98000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Bowie de Caza'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -211,7 +241,9 @@
                             <div class="contenido-back">
                                 <h4>Cuchillo de cuello</h4>
                                 <p class="descripcion-prod">es un cuchillo pequeño de hoja fija que se lleva colgado del cuello mediante un cordón o una cadena.</p>
-                                <div class="precio-prod">$40000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Cuchillo de cuello'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -231,7 +263,9 @@
                             <div class="contenido-back">
                                 <h4>Cuchillo de monte</h4>
                                 <p class="descripcion-prod">herramienta de hoja fija, fuerte y multiusos, diseñada para realizar tareas de supervivencia, caza, campamento y trabajos en la naturaleza.</p>
-                                <div class="precio-prod">$75000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Cuchillo de monte'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -239,7 +273,7 @@
                 </article>
             </div>
         </section>
-        <section class="categoria-catalogo" aria-labelledby="titulo-personalizados">
+        <section id="id_personalizados" class="categoria-catalogo" aria-labelledby="titulo-personalizados">
             <h2 id="titulo-personalizados">Personalizados</h2>
             <div class="grid_galerias">
                 <article class="tarjeta-producto">
@@ -256,7 +290,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 1</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 1'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -276,7 +312,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 2</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 2'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -296,7 +334,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 3</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 3'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -316,7 +356,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 4</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 4'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -336,7 +378,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 5</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 5'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -356,7 +400,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 6</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 6'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -376,7 +422,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 7</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 7'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -396,7 +444,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 8</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 8'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -416,7 +466,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 9</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 9'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -436,7 +488,9 @@
                             <div class="contenido-back">
                                 <h4>De autor 10</h4>
                                 <p class="descripcion-prod">Es una pieza de cuchillería única o de tirada muy limitada, diseñada y fabricada de manera artesanal por un maestro artesano o diseñador que firma su obra.</p>
-                                <div class="precio-prod">$70000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De autor 10'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -444,7 +498,7 @@
                 </article> 
             </div>
         </section>
-        <section class="categoria-catalogo" aria-labelledby="titulo-restaurados">
+        <section id="id_restaurados" class="categoria-catalogo" aria-labelledby="titulo-restaurados">
             <h2 id="titulo-restaurados">Restaurados</h2>
             <div class="grid_galerias">
                 <article class="tarjeta-producto">
@@ -461,7 +515,9 @@
                             <div class="contenido-back">
                                 <h4>Chef</h4>
                                 <p class="descripcion-prod">También llamado cuchillo cebollero o de cocinero, es la herramienta más versátil y esencial en cualquier Guía de cuchillos de cocina.</p>
-                                <div class="precio-prod">$82000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Chef'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -481,7 +537,9 @@
                             <div class="contenido-back">
                                 <h4>Cuchillo de carnicero</h4>
                                 <p class="descripcion-prod">Es una herramienta robusta y afilada diseñada específicamente para el despiece, fileteado y corte de grandes piezas de carne, grasa y huesos.</p>
-                                <div class="precio-prod">$81000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Cuchillo de carnicero'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -501,7 +559,9 @@
                             <div class="contenido-back">
                                 <h4>Chef Sebatier</h4>
                                 <p class="descripcion-prod">Es una herramienta de cocina clásica de origen francés, famosa por su diseño equilibrado, durabilidad y precisión de corte.</p>
-                                <div class="precio-prod">$105000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Chef Sebatier'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -521,7 +581,9 @@
                             <div class="contenido-back">
                                 <h4>Bowie</h4>
                                 <p class="descripcion-prod">Es un arma blanca y herramienta de gran tamaño, famosa por su diseño robusto y su historia ligada al pionero estadounidense James "Jim" Bowie.</p>
-                                <div class="precio-prod">$150000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Bowie'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -541,7 +603,9 @@
                             <div class="contenido-back">
                                 <h4>Facon</h4>
                                 <p class="descripcion-prod">Es un cuchillo tradicional de hoja larga y aguzada, símbolo histórico del gaucho en Argentina, Uruguay y sur de Brasil.</p>
-                                <div class="precio-prod">$150000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Facon'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -561,7 +625,9 @@
                             <div class="contenido-back">
                                 <h4>Cuchillo Verijero</h4>
                                 <p class="descripcion-prod">Es un cuchillo criollo argentino, tradicional, liviano y de hoja corta, que se lleva en la cintura.</p>
-                                <div class="precio-prod">$680000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Cuchillo Verijero'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -581,7 +647,9 @@
                             <div class="contenido-back">
                                 <h4>Deshuesador</h4>
                                 <p class="descripcion-prod">Es una herramienta de cocina con una hoja fina, estrecha y ligeramente curvada que sirve para separar con precisión la carne del hueso.</p>
-                                <div class="precio-prod">$80000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Deshuesador antiguo'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -601,7 +669,9 @@
                             <div class="contenido-back">
                                 <h4>De Caza</h4>
                                 <p class="descripcion-prod">Es una herramienta de hoja fija o plegable diseñada específicamente para actividades cinegéticas como desollar, despiezar, limpiar y rematar piezas abatidas.</p>
-                                <div class="precio-prod">$98000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De Caza'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -621,7 +691,9 @@
                             <div class="contenido-back">
                                 <h4>Filetero</h4>
                                 <p class="descripcion-prod">O fileteador, es una herramienta de cocina con una hoja larga, fina y muy flexible, diseñada para separar con precisión la carne de las espinas o la piel.</p>
-                                <div class="precio-prod">$40000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['Filetero'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>
@@ -641,7 +713,9 @@
                             <div class="contenido-back">
                                 <h4> De Campo</h4>
                                 <p class="descripcion-prod">Es una herramienta tradicional y robusta diseñada para el trabajo rural, las tareas de campamento y la preparación del asado Zona campo.</p>
-                                <div class="precio-prod">$75000</div>
+                                <div class="precio-prod">
+                                    $<?php echo number_format($precios['De Campo'] ?? 0, 0, ',', '.'); ?>
+                                </div>
                                 <span class="btn-volver">Hacer clic para volver</span>
                             </div>
                         </div>

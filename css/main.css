@@ -17,6 +17,7 @@
 @import url("./pages/inicio.css");
 @import url("./pages/categorias.css");
 @import url("./pages/materiales.css");
+@import url("./pages/admin.css"); 
 
 /* 5. Adaptabilidad (Siempre al final de todo) */
 @import url("./responsive/mobile.css") screen and (max-width: 768px);

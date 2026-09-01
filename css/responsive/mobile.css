@@ -51,7 +51,9 @@
   right: -100%;           /* Oculto fuera de la pantalla a la derecha */
   width: 260px;           /* Ancho del panel del menú */
   height: 100vh;
-  background-color: #000000; /* Mantiene tu fondo negro */
+  background: #000000 !important; /* Mantiene tu fondo negro */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important; 
   padding-top: 80px;      /* Espacio para que el botón no tape el primer enlace */
   transition: 0.4s ease;
   z-index: 99;
@@ -81,6 +83,18 @@
   text-align: center;
   color: white;           /* Asegura que mantenga el color del texto */
   text-decoration: none;
+  text-transform: none;   
+  letter-spacing: normal; 
+}
+
+.menu a::after {
+  display: none !important;
+}
+
+.menu a:hover {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  color: coral; /* Al tocar un enlace en móvil, solo cambia de color sutilmente */
 }
 
 .menu-toggle.activo span:nth-child(1) {
